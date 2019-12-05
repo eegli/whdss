@@ -1,11 +1,10 @@
 import React from 'react';
 import './clock.text.component.css';
 
-const ClockText = ({ title, teaser, text }) => {
+const ClockText = ({ title, text }) => {
   return (
     <div>
-      <h2>{title}</h2>
-      <h3>{teaser}</h3>
+      <h1>{title}</h1>
       <h3>{text}</h3>
     </div>
   );

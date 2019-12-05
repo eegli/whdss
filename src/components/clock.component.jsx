@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ClockTime from './clock/clock.time.component';
 import ClockText from './clock/clock.text.component';
 import './clock.component.css';
 
 const Clock = () => {
+  useEffect(() => {
+    document.title = 'WHDSS Brudi';
+  }, []);
   return (
-    <div>
-      <ClockText title="Wiehnachtsässe Timer" teaser="de countdown lauft" />
+    <div className="clock">
+      <ClockText title="Wiehnachtsässe Timer" />
       <ClockTime />
       <ClockText text="huere guet oder" />
     </div>

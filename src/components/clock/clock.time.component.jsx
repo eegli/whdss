@@ -1,19 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './clock.time.component.css';
 
 const ClockTime = () => {
-  const now = new Date();
-  const essn = new Date('2019-12-28T18:00:00');
-  const diff_days = Math.round((essn.getTime() - now.getTime()) / 86400000);
-  const diff_hours = Math.round(essn.getTime() - diff_days * 86400000);
+  const date = '2019-12-28T18:00:00';
+  const [now, setNow] = useState(new Date());
+  const essn = new Date(date).getTime();
 
-  console.log(essn);
+  useEffect(() => {
+    setTimeout(() => {
+      setNow(new Date());
+    }, 1000);
+  });
 
-  // const [time, setTime] = useState(currentTime);
+  const timeCalc = () => {
+    let msec = essn - now;
+    const dd = Math.floor(msec / 1000 / 60 / 60 / 24);
+    msec -= dd * 1000 * 60 * 60 * 24;
+    const hh = Math.floor(msec / 1000 / 60 / 60);
+    msec -= hh * 1000 * 60 * 60;
+    const mm = Math.floor(msec / 1000 / 60);
+    msec -= mm * 1000 * 60;
+    const ss = Math.floor(msec / 1000);
+    msec -= ss * 1000;
+    return [dd, hh, mm, ss];
+  };
+
+  const addLeadingZeros = value => {
+    value = String(value);
+    while (value.length < 2) {
+      value = '0' + value;
+    }
+    return value;
+  };
+
+  const days = addLeadingZeros(timeCalc()[0]);
+  const hours = addLeadingZeros(timeCalc()[1]);
+  const minutes = addLeadingZeros(timeCalc()[2]);
+  const seconds = addLeadingZeros(timeCalc()[3]);
+
   return (
-    <h1>
-      {diff_days}, {diff_hours}
-    </h1>
+    <h3>
+      {days} {days < 2 ? 'Tag' : 'Täg'}, {hours}{' '}
+      {hours < 2 ? 'Stund' : 'Stunde'}, {minutes} Minute, {seconds} Sekunde
+    </h3>
   );
 };
 
