@@ -2,12 +2,12 @@ import React, { useState, useEffect } from 'react';
 
 const ClockTime = () => {
   const date = '2019-12-28T17:00:00';
-  const [now, setNow] = useState(new Date());
+  const [now, setNow] = useState(new Date().getTime());
   const essn = new Date(date).getTime();
 
   useEffect(() => {
     setTimeout(() => {
-      setNow(new Date());
+      setNow(new Date().getTime());
     }, 1000);
   });
 
@@ -37,12 +37,19 @@ const ClockTime = () => {
   const minutes = addLeadingZeros(timeCalc()[2]);
   const seconds = addLeadingZeros(timeCalc()[3]);
 
-  return (
+  const futureAsse = (
     <h3>
       {days} {days < 2 ? 'Tag' : 'Täg'}, {hours}{' '}
       {hours < 2 ? 'Stund' : 'Stunde'}, {minutes} Minute, {seconds} Sekunde
     </h3>
   );
+  const pastAsse = <h3>Schön ischs gsi, freue mi scho ufs nächste ❤️</h3>;
+
+  let text = () => {
+    return now < essn ? (text = futureAsse) : (text = pastAsse);
+  };
+
+  return text();
 };
 
 export default ClockTime;

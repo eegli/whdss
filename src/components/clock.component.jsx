@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import ClockTime from './clock/clock.time.component';
 import ClockText from './clock/clock.text.component';
+import yoda from '../img/yoda.jpeg';
 import './clock.component.css';
 
 const Clock = () => {
@@ -11,7 +12,9 @@ const Clock = () => {
     <div className="clock">
       <ClockText title="Wiehnachtsässe Timer" />
       <ClockTime />
-      <ClockText text="huere guet oder" />
+      <div className="image">
+        <img src={yoda} height="400px" />
+      </div>
     </div>
   );
 };
