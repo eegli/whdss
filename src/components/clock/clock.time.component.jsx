@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const ClockTime = () => {
-  const date = '2019-12-28T18:00:00';
+  const date = '2019-12-28T17:00:00';
   const [now, setNow] = useState(new Date());
   const essn = new Date(date).getTime();
 
