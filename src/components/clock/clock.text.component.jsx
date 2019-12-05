@@ -1,5 +1,4 @@
 import React from 'react';
-import './clock.text.component.css';
 
 const ClockText = ({ title, text }) => {
   return (
