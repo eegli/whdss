@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 const ClockTime = () => {
   const date = '2019-12-28T17:00:00';
+  const date2 = '2019-12-29T03:00:00';
   const [now, setNow] = useState(new Date().getTime());
   const essn = new Date(date).getTime();
+  const essn2 = new Date(date2).getTime();
 
   useEffect(() => {
     setTimeout(() => {
@@ -37,16 +39,27 @@ const ClockTime = () => {
   const minutes = addLeadingZeros(timeCalc()[2]);
   const seconds = addLeadingZeros(timeCalc()[3]);
 
-  const futureAsse = (
+  const futureAsseText = (
     <h3>
       {days} {days < 2 ? 'Tag' : 'Täg'}, {hours}{' '}
       {hours < 2 ? 'Stund' : 'Stunde'}, {minutes} Minute, {seconds} Sekunde
     </h3>
   );
-  const pastAsse = <h3>Schön ischs gsi, freue mi scho ufs nächste ❤️</h3>;
+
+  const midAsseText = <h3>Endlich!!! 😍 </h3>;
+
+  const pastAsseText = <h3>Schön ischs gsi, freue mi scho ufs nächste ❤️</h3>;
 
   let text = () => {
-    return now < essn ? (text = futureAsse) : (text = pastAsse);
+    if (now < essn) {
+      text = futureAsseText;
+    } else if (essn < now && now < essn2) {
+      text = midAsseText;
+    } else {
+      text = pastAsseText;
+    }
+
+    return text;
   };
 
   return text();
