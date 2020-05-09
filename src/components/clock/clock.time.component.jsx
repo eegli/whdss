@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 const ClockTime = () => {
-  const date = '2019-12-28T17:00:00';
-  const date2 = '2019-12-29T03:00:00';
+  const date = '2020-04-14T20:00:00';
+  const date2 = '2020-04-14T23:59:59';
   const [now, setNow] = useState(new Date().getTime());
   const essn = new Date(date).getTime();
   const essn2 = new Date(date2).getTime();
@@ -26,7 +26,7 @@ const ClockTime = () => {
     return [dd, hh, mm, ss];
   };
 
-  const addLeadingZeros = value => {
+  const addLeadingZeros = (value) => {
     value = String(value);
     while (value.length < 2) {
       value = '0' + value;
