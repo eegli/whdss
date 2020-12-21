@@ -48,11 +48,11 @@ const ClockTime: React.FC = () => {
       </h3>
       <h3>
         {addLeadingZeros(hours)}{' '}
-        {hours < 2 ? config.hoursSingular : config.hoursPlural},
+        {hours < 2 ? config.hoursSingular : config.hoursPlural}
       </h3>
       <h3>
         {addLeadingZeros(minutes)}{' '}
-        {minutes < 2 ? config.minutesSingular : config.minutesPlural},
+        {minutes < 2 ? config.minutesSingular : config.minutesPlural}
       </h3>
       <h3>
         {addLeadingZeros(seconds)}{' '}
