@@ -41,16 +41,16 @@ const ClockTime: React.FC = () => {
   const futureAsseText = (
     <>
       <h3>
-        {days} {days < 2 ? config.daySingular : config.daysPlural}
+        {days} {days == 1 ? config.daySingular : config.daysPlural}
       </h3>
       <h3>
-        {hours} {hours < 2 ? config.hoursSingular : config.hoursPlural}
+        {hours} {hours == 1 ? config.hoursSingular : config.hoursPlural}
       </h3>
       <h3>
-        {minutes} {minutes < 2 ? config.minutesSingular : config.minutesPlural}
+        {minutes} {minutes == 1 ? config.minutesSingular : config.minutesPlural}
       </h3>
       <h3>
-        {seconds} {seconds < 2 ? config.secondsSingular : config.secondsPlural}
+        {seconds} {seconds == 1 ? config.secondsSingular : config.secondsPlural}
       </h3>
     </>
   );
