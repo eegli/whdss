@@ -1,3 +1,7 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   box-sizing: border-box;
@@ -7,15 +11,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .main {
+  flex: 1;
   text-align: center;
-  margin: auto;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
+  min-height: 100%;
 }
 
 h1 {
@@ -25,7 +33,6 @@ h1 {
 h3 {
   font-size: 20px;
   margin: 10px 0;
-  display: inline;
 }
 
 .image {
