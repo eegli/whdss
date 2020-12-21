@@ -1,5 +1,7 @@
 /node_modules
 /build
 
+.eslintcache
+
 #MacOS
 .DS_Store
