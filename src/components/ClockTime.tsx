@@ -2,11 +2,9 @@ import { useState, useEffect } from 'react';
 import { config } from '../config';
 
 const ClockTime: React.FC = () => {
-  const startDate = config.startDate;
-  const endDate = config.endDate;
+  const startDate = new Date(config.startDate).getTime();
+  const endDate = new Date(config.endDate).getTime();
   const [now, setNow] = useState(new Date().getTime());
-  const essn = new Date(startDate).getTime();
-  const essn2 = new Date(endDate).getTime();
 
   useEffect(() => {
     setTimeout(() => {
@@ -15,7 +13,7 @@ const ClockTime: React.FC = () => {
   });
 
   const timeCalc = (): Array<number> => {
-    let msec = essn - now;
+    let msec = startDate - now;
     const dd = Math.floor(msec / 1000 / 60 / 60 / 24);
     msec -= dd * 1000 * 60 * 60 * 24;
     const hh = Math.floor(msec / 1000 / 60 / 60);
@@ -62,9 +60,9 @@ const ClockTime: React.FC = () => {
   );
 
   let text = (): JSX.Element => {
-    if (now < essn) {
+    if (now < startDate) {
       return futureAsseText;
-    } else if (essn < now && now < essn2) {
+    } else if (startDate < now && now < endDate) {
       return <h3>{config.startText}</h3>;
     } else {
       return <h3>{config.endText}</h3>;
