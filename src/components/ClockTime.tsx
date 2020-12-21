@@ -57,17 +57,13 @@ const ClockTime: React.FC = () => {
     </>
   );
 
-  let text = (): JSX.Element => {
-    if (now < startDate) {
-      return futureAsseText;
-    } else if (startDate < now && now < endDate) {
-      return <h3>{config.startText}</h3>;
-    } else {
-      return <h3>{config.endText}</h3>;
-    }
-  };
-
-  return text();
+  if (now < startDate) {
+    return futureAsseText;
+  } else if (startDate < now && now < endDate) {
+    return <h3>{config.startText}</h3>;
+  } else {
+    return <h3>{config.endText}</h3>;
+  }
 };
 
 export default ClockTime;
