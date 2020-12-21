@@ -1,5 +1,5 @@
 import ClockTime from './components/ClockTime';
-import yoda from './assets/yoda_2.jpg';
+import yoda from './assets/yoda.jpeg';
 import { config } from './config';
 import './styles/style.css';
 
