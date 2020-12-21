@@ -1,4 +1,3 @@
-import React from 'react';
 import ClockTime from './components/ClockTime';
 import yoda from './assets/yoda_2.jpg';
 import { config } from './config';
