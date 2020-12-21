@@ -24,14 +24,14 @@ const ClockTime: React.FC = () => {
     msec -= ss * 1000;
     return [dd, hh, mm, ss];
   };
-
-  const addLeadingZeros = (v: number): string => {
+  // Maybe needed in the future
+  /*   const addLeadingZeros = (v: number): string => {
     let value = String(v);
     while (value.length < 2) {
       value = '0' + value;
     }
     return value;
-  };
+  }; */
 
   let days = timeCalc()[0];
   let hours = timeCalc()[1];
@@ -41,20 +41,16 @@ const ClockTime: React.FC = () => {
   const futureAsseText = (
     <>
       <h3>
-        {addLeadingZeros(days)}{' '}
-        {days < 2 ? config.daySingular : config.daysPlural}
+        {days} {days < 2 ? config.daySingular : config.daysPlural}
       </h3>
       <h3>
-        {addLeadingZeros(hours)}{' '}
-        {hours < 2 ? config.hoursSingular : config.hoursPlural}
+        {hours} {hours < 2 ? config.hoursSingular : config.hoursPlural}
       </h3>
       <h3>
-        {addLeadingZeros(minutes)}{' '}
-        {minutes < 2 ? config.minutesSingular : config.minutesPlural}
+        {minutes} {minutes < 2 ? config.minutesSingular : config.minutesPlural}
       </h3>
       <h3>
-        {addLeadingZeros(seconds)}{' '}
-        {seconds < 2 ? config.secondsSingular : config.secondsPlural}
+        {seconds} {seconds < 2 ? config.secondsSingular : config.secondsPlural}
       </h3>
     </>
   );
