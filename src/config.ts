@@ -1,7 +1,7 @@
 export const config = {
   startDate: '2020-12-22T18:00:00',
   endDate: '2020-12-22T23:59:59',
-  mainTitle: 'Wiehnachtsässe Timer',
+  mainTitle: '🎉Wiehnachtsässe Timer🍾',
   startText: 'Endlich!!! 😍',
   endText: 'Schön ischs gsi, freue mi scho ufs nächste ❤️',
   daySingular: 'Tag',

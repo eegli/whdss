@@ -41,16 +41,24 @@ const ClockTime: React.FC = () => {
   let seconds = timeCalc()[3];
 
   const futureAsseText = (
-    <h3>
-      {addLeadingZeros(days)}{' '}
-      {days < 2 ? config.daySingular : config.daysPlural},{' '}
-      {addLeadingZeros(hours)}{' '}
-      {hours < 2 ? config.hoursSingular : config.hoursPlural},{' '}
-      {addLeadingZeros(minutes)}{' '}
-      {minutes < 2 ? config.minutesSingular : config.minutesPlural},{' '}
-      {addLeadingZeros(seconds)}{' '}
-      {seconds < 2 ? config.secondsSingular : config.secondsPlural}
-    </h3>
+    <>
+      <h3>
+        {addLeadingZeros(days)}{' '}
+        {days < 2 ? config.daySingular : config.daysPlural}
+      </h3>
+      <h3>
+        {addLeadingZeros(hours)}{' '}
+        {hours < 2 ? config.hoursSingular : config.hoursPlural},
+      </h3>
+      <h3>
+        {addLeadingZeros(minutes)}{' '}
+        {minutes < 2 ? config.minutesSingular : config.minutesPlural},
+      </h3>
+      <h3>
+        {addLeadingZeros(seconds)}{' '}
+        {seconds < 2 ? config.secondsSingular : config.secondsPlural}
+      </h3>
+    </>
   );
 
   let text = (): JSX.Element => {

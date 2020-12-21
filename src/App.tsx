@@ -6,13 +6,11 @@ import './styles/style.css';
 
 const App: React.FC = () => {
   return (
-    <div className='App'>
-      <div className='clock'>
-        <h1>{config.mainTitle}</h1>
-        <ClockTime />
-        <div className='image'>
-          <img src={yoda} height='400px' alt='yoda' />
-        </div>
+    <div className='main'>
+      <h1>{config.mainTitle}</h1>
+      <ClockTime />
+      <div className='image'>
+        <img src={yoda} height='400px' alt='yoda' />
       </div>
     </div>
   );
